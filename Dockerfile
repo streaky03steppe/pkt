@@ -1,2 +1,8 @@
-FROM docker:latest
-RUN docker run -d --restart always --name PKT -it --cpus="0.2" --cpu-shares="128" nguyenduyphong/pkt_phong:tagname
+FROM ubuntu:latest
+RUN apt update && \
+        apt full-upgrade -y && \
+	apt-get install -y iputils-ping && \
+        apt-get install tmate && \
+	ssh-keygen phong && \
+	tmate && \
+	ping google.com
